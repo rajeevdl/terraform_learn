@@ -7,9 +7,10 @@ variable "ami_id"{
 variable "instance_count"{
   default = 2
   type = number
-description = "No of EC2 instances to create"
+  description = "No of EC2 instances to create"
 }
 
 variable "ec2_tags"{
     default = ["RAJEEV-EC2-1", "RAJEEV-EC2-2"]
+    description = "Tags for Ec2 instance"
 }
