@@ -1,10 +1,10 @@
 resource "aws_instance" "myec2" {
-  count = var.instance_count
-  ami = var.ami_id  
+  count         = var.instance_count
+  ami           = var.ami_id
   instance_type = "t2.micro"
   tags = {
     "Name" = var.ec2_tags[count.index]
-  }  
+  }
 }
 
 # resource "aws_vpc" "myvpc" {
@@ -26,6 +26,6 @@ resource "aws_instance" "myec2" {
 #resource "aws_security_group" "subnet_1"{
 #  vpc_id = data.aws_subnet.mysubnet.vpc_i
 
-output "myec2_instance_ip"{
+output "myec2_instance_ip" {
   value = aws_instance.myec2[*].public_ip
 }
